@@ -1,0 +1,392 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital@0;1&family=Kanit:wght@700&display=swap');
+
+/* Design constants */
+html {
+
+    /* Harmonic scale */
+    --ratio: 1.4142356;
+    --s-5: calc(var(--s-4) / var(--ratio));
+    --s-4: calc(var(--s-3) / var(--ratio));
+    /* Larger title font size */
+    --s-3: calc(var(--s-2) / var(--ratio));
+    /* Smaller title font size */
+    --s-2: calc(var(--s-1) / var(--ratio));
+    --s-1: calc(var(--s0) / var(--ratio));
+    --s0: 1rem;
+    /* table font size */
+    --s1: calc(var(--s0) * var(--ratio));
+    --s2: calc(var(--s1) * var(--ratio));
+    --s3: calc(var(--s2) * var(--ratio));
+    --s4: calc(var(--s3) * var(--ratio));
+    --s5: calc(var(--s4) * var(--ratio));
+
+    /* white spaces */
+    --page-margin: var(--s4);
+    --vertical-space: var(--s2);
+    --menu-space: var(--s0);
+
+    /* colors */
+    --frame-color: #ccc;
+}
+
+/* Adjust page margin for small dislays */
+@media only screen and (max-width: 600px) {
+    :root {
+        --page-margin: var(--s-2);
+    }
+}
+
+
+body,
+html {
+    margin: 0;
+    /* 去除默认的页面边距 */
+    padding: 0;
+    /* 去除默认的页面内边距 */
+    height: 100%;
+    /* 保证页面充满浏览器 */
+}
+
+h1,
+h2 {
+    font-family: Kanit;
+}
+
+main {
+    margin: var(--s2) var(--s4) var(--s2) var(--s4);
+    /* border: 1px solid black; */
+    background-color: #fff6;
+    font-family: Crimson Text;
+    font-size: 14pt;
+    max-width: 900px;
+    /* 设置最大宽度，防止内容过宽 */
+
+    box-sizing: border-box;
+    /* 包括padding在内计算宽度 */
+
+}
+
+header {
+    font-size: 18pt;
+    float: left;
+    color: white;
+    position: relative;
+    left: var(--s4);
+}
+
+
+.header {
+    background-image: url(chessboxing_background.jpg);
+    background-size: auto 100%;
+    /* 保持图片的高度填满容器，高度自适应 */
+    background-position: center;
+    /* 图片水平居中 */
+    background-repeat: no-repeat;
+    /* 禁止图片重复 */
+    background-color: black;
+    /* 其他区域填充为黑色 */
+    width: 100%;
+    height: 240px;
+    clear: both;
+    position: relative;
+    /* 允许子元素相对于header定位 */
+}
+
+nav {
+    position: absolute;
+    /* 使用绝对定位 */
+    bottom: 10px;
+    /* 距离底部10px */
+    right: var(--s4);
+    /* 距离右边10px */
+}
+
+nav ul {
+    list-style: none;
+    /* 移除默认的列表项符号 */
+    padding: 0;
+    margin: 0;
+    display: flex;
+    /* 使列表项水平排列 */
+}
+
+nav ul li {
+    margin-left: 20px;
+    /* 给每个列表项之间加一些间距 */
+}
+
+nav a {
+    font-family: Kanit;
+    font-size: 14pt;
+    color: white;
+    text-decoration: none;
+}
+
+
+
+.Main .Picture img {
+    width: 100%;
+    /* 确保图片自适应容器宽度 */
+    max-width: 100%;
+    /* 防止图片宽度超出容器 */
+    height: auto;
+    /* 保持图片的纵横比 */
+}
+
+
+
+.Main .Picture {
+    float: right;
+    text-align: center;
+    vertical-align: top;
+    width: 50%;
+    padding: 20px;
+    margin: 0 0 0 20px;
+    border: 2px solid rgb(168, 158, 158);
+    /* 更正为有效的颜色 */
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.History h2::before {
+    content: '\2655';
+    /* Unicode 编码：白色国王符号 */
+    font-family: Crimson Text;
+    font-size: 50px;
+    /* 设置图标大小 */
+    margin-right: 10px;
+    /* 设置标题和图标之间的间距 */
+    vertical-align: baseline;
+    /* 垂直对齐图标 */
+}
+
+.History h2 {
+    height: max-content;
+    padding: 2%;
+}
+
+
+.History {
+    margin-top: 20px;
+    /* 或者使用 padding-top: 20px; */
+    clear: both;
+    /* 这将使其位于所有浮动元素的下方 */
+
+}
+
+
+.History .video {
+    float: right;
+    text-align: center;
+    vertical-align: top;
+    width: 50%;
+    padding: 20px;
+    margin: 0 0 0 20px;
+    border: 2px solid rgb(168, 158, 158);
+    /* 更正为有效的颜色 */
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.video embed {
+    width: 100%;
+    /* 确保图片自适应容器宽度 */
+    max-width: 100%;
+    /* 防止图片宽度超出容器 */
+}
+
+
+
+.History .table {
+    width: 100%;
+    /* 控制表格宽度 */
+    padding: 20px;
+
+    text-align: center;
+    border: 2px solid rgb(168, 158, 158);
+    /* 有效的边框颜色 */
+    border-radius: 15px;
+    overflow: hidden;
+
+
+}
+
+.History .table .title {
+    position:relative;
+
+    width: 100%;
+
+    margin: 50px;
+    font-style: italic;
+    font-size: 20pt;
+    text-align: center;
+
+}
+
+table {
+    border-collapse: collapse;
+    clear: both;
+    width: 320px;
+    float:left;
+    
+}
+
+
+
+.History table th {
+    border-bottom: 2px solid rgb(168, 158, 158);
+    /* 标题和内容之间的横线 */
+    text-align: center;
+    font-weight: bold;
+    /* 加粗标题 */
+}
+
+.History table td {
+    text-align: left;
+    padding: 4px;
+    border-bottom: 1px solid rgb(168, 158, 158);
+    /* 行内容与下一行之间的横线 */
+}
+
+.History .table .map img{
+    clear:none;
+}
+
+
+.Rules h2::before {
+    content: '\2654';
+    /* Unicode 编码：白色国王符号 */
+    font-family: Crimson Text;
+    font-size: 50px;
+    /* 设置图标大小 */
+    margin-right: 10px;
+    /* 设置标题和图标之间的间距 */
+    vertical-align: baseline;
+    /* 垂直对齐图标 */
+}
+
+.Training h2::before {
+    content: '\2656';
+    /* Unicode 编码：白色国王符号 */
+    font-family: Crimson Text;
+    font-size: 50px;
+    /* 设置图标大小 */
+    margin-right: 10px;
+    /* 设置标题和图标之间的间距 */
+    vertical-align: baseline;
+    /* 垂直对齐图标 */
+}
+
+.MVM h2::before {
+    content: '\2657';
+    /* Unicode 编码：白色国王符号 */
+    font-family: Crimson Text;
+    font-size: 50px;
+    /* 设置图标大小 */
+    margin-right: 10px;
+    /* 设置标题和图标之间的间距 */
+    vertical-align: baseline;
+    /* 垂直对齐图标 */
+}
+
+footer {
+    background-color: black;
+    height: 100px;
+    display: flex;
+    /* 启用 Flexbox */
+    justify-content: center;
+    /* 水平居中 */
+    align-items: center;
+    /* 垂直居中 */
+    text-align: center;
+    /* 确保文本本身是居中的 */
+}
+
+footer .Text {
+    font-family: Kanit;
+    font-size: 14pt;
+    color: white;
+    text-decoration: none;
+}
+
+footer .Text a {
+    font-family: Kanit;
+    font-size: 14pt;
+    color: white;
+}
+
+/* 小显示屏（宽度不超过600px） */
+@media screen and (max-width: 600px) {
+    main {
+        margin: var(--s2) 18px var(--s2) 20px;
+        /* border: 1px solid black; */
+        background-color: #fff6;
+        font-family: Crimson Text;
+        font-size: 14pt;
+        max-width: 900px;
+        /* 设置最大宽度，防止内容过宽 */
+    
+        box-sizing: border-box;
+        /* 包括padding在内计算宽度 */
+    
+    }
+
+    header {
+        font-size: 16pt;
+        float: left;
+        color: white;
+        position: relative;
+        left: 18px;
+    }
+
+    nav {
+        bottom: 5px;
+        /* 缩小底部间距 */
+        right: 10px;
+        /* 缩小右边间距 */
+    }
+
+    nav ul {
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        /* 垂直排列菜单项 */
+        align-items: flex-end;
+        /* 左对齐 */
+    }
+
+    nav ul li {
+        margin-left: 0;
+        /* 取消左边距 */
+        margin-bottom: 10px;
+        /* 增加垂直间距 */
+    }
+
+    nav a {
+        font-size: 12pt;
+        /* 缩小字体大小 */
+        padding: 5px;
+        /* 增加内边距，使得链接更易点击 */
+    }
+
+    .Main .Picture {
+        width: 100%;
+        /* 使图片宽度占满整个父容器 */
+        padding: 10px;
+        /* 缩小内边距 */
+        margin: 0 0 10px;
+        /* 取消左右外边距 */
+    }
+
+    .History .video {
+        width: 100%;
+        /* 使图片宽度占满整个父容器 */
+        padding: 10px;
+        /* 缩小内边距 */
+        margin: 0 0 10px;
+        /* 取消左右外边距 */
+    }
+}
+
+/*** Page layout **********************************************************************************/
